@@ -1,11 +1,11 @@
 {# Previous/next page links - only displayed on page 2+ #}
 <div class="extra-pagination inner">
-    {{pagination}}
+    {% include "partials/pagination.html" %}
 </div>
 
 {# This is the post loop - each post will be output using this markup #}
 {% for post in posts %}
-<article class="{{post_class}}">
+<article class="post">
     <header class="post-header">
         <h2 class="post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
     </header>
@@ -13,13 +13,13 @@
         <p>{{post.content}} <a class="read-more" href="{{post.url}}">&raquo;</a></p>
     </section>
     <footer class="post-meta">
-        {% if author.image %}<img class="author-thumb" src="{{post.author.image}}" alt="{{post.author.name}}" nopin="nopin" />{% endif %}
-        {{post.author}}
+        {% if post.author.image %}<img class="author-thumb" src="{{post.author.image}}" alt="{{post.author.name}}" nopin="nopin" />{% endif %}
+        <!-- <a href="" -->
         {{post.tags}}
-        <time class="post-date" datetime="{{post.date|datetime}}">{{date|datetime}}</time>
+        <time class="post-date" datetime="{{post.date}}">{{post.date}}</time>
     </footer>
 </article>
 {% endfor %}
 
 {# Previous/next page links - displayed on every page #}
-{{pagination}}
+{% include "partials/pagination.html" %}
