@@ -16,3 +16,18 @@ BLOG_TITLE = "Test Blog"
 # Description of your blog. This will also be placed into a meta tag in the
 # head section.
 BLOG_DESCRIPTION = "An empty blog"
+
+# The database name to make available as the db attribute. Default: app.name.
+MONGO_DBNAME = "epen"
+
+# The host name or IP address of your MongoDB server. Default: “localhost”.
+MONGO_HOST = "localhost"
+
+# The port number of your MongoDB server. Default: 27017.
+MONGO_PORT = "27017"
+
+# The user name for mongodb authentication. Default: None
+MONGO_USERNAME ＝ None
+
+# The password for mongodb authentication. Default: None
+MONGO_PASSWORD = None
