@@ -27,7 +27,7 @@ MONGO_HOST = "localhost"
 MONGO_PORT = "27017"
 
 # The user name for mongodb authentication. Default: None
-MONGO_USERNAME ＝ None
+MONGO_USERNAME = None
 
 # The password for mongodb authentication. Default: None
 MONGO_PASSWORD = None
