@@ -1,0 +1,8 @@
+Babel==2.1.1
+Flask-Babel==0.9
+Flask-PyMongo==0.4.0
+Flask-Script==2.0.5
+Flask==0.10.1
+Jinja2==2.7.3
+PyMongo==3.0.3
+Werkzeug==0.10.1
