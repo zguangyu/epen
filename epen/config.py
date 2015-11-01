@@ -12,3 +12,7 @@ THEME = "casper"
 
 # The title of your blog.
 BLOG_TITLE = "Test Blog"
+
+# Description of your blog. This will also be placed into a meta tag in the
+# head section.
+BLOG_DESCRIPTION = "An empty blog"

@@ -10,6 +10,7 @@ app.jinja_env.filters["datetime"] = format_datetime
 def register_blog():
     blog = {}
     blog["title"] = app.config["BLOG_TITLE"]
+    blog["description"] = app.config["BLOG_DESCRIPTION"]
     blog["date"] = datetime.datetime.now()
     app.jinja_env.globals["blog"] = blog
 
