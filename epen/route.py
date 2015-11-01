@@ -8,7 +8,6 @@ def index():
     res = mongo.db.posts.find().sort("time", pymongo.DESCENDING)
     pages = res.count() // 10 + 1
     next = 2 if pages > 1 else None
-    print(res[0]['author'])
     return render_template("index.html", posts=res[:10], next=next, pages=pages, page=1)
 
 @app.route("/page/<int:page>/")
