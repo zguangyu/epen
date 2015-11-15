@@ -1,3 +1,4 @@
-from .app import app, mongo
+from .app import app
 from .route import *
-import epen.jinja
+import .jinja
+import .db
