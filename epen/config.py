@@ -31,3 +31,9 @@ MONGO_USERNAME = None
 
 # The password for mongodb authentication. Default: None
 MONGO_PASSWORD = None
+
+# The secret key used by session and csrf. Please set it in your config_local.py
+# and keep it secret.
+SECRET_KEY = "blah blah"
+
+from .config_local import *
