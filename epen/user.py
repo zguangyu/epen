@@ -4,6 +4,7 @@ import hashlib
 from flask.ext.login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from .app import app, mongo
+from flask.ext.login import LoginManager
 
 login_manager = LoginManager()
 login_manager.init_app(app)

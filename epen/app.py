@@ -1,6 +1,5 @@
 from flask import Flask
 from flask.ext.pymongo import PyMongo
-from flask.ext.login import LoginManager
 import jinja2
 
 app = Flask("epen")

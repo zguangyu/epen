@@ -1,11 +1,11 @@
 import os
 import pymongo
-from flask import render_template, send_from_directory, request, flash,
+from flask import render_template, send_from_directory, request, flash, \
     redirect, url_for
 from flask.ext.login import login_required
 from .app import app, mongo
 from .user import User
-from urlparse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin
 
 def is_safe_url(target):
     '''
@@ -58,7 +58,7 @@ def assets(filename):
 @app.route("/admin/login/", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        return render_template("login.html")
+        return render_template("admin/login.html")
     try:
         email = request.form["email"]
         password = request.form["password"]

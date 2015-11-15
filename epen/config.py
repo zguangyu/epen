@@ -36,4 +36,4 @@ MONGO_PASSWORD = None
 # and keep it secret.
 SECRET_KEY = "blah blah"
 
-from .config_local import *
+from epen.config_local import *
