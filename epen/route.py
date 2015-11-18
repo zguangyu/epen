@@ -3,9 +3,12 @@ import pymongo
 from flask import render_template, send_from_directory, request, flash, \
     redirect, url_for
 from flask.ext.login import login_required
+from urllib.parse import urlparse, urljoin
+from werkzeug.exceptions import NotFound
+
 from .app import app, mongo
 from .user import User
-from urllib.parse import urlparse, urljoin
+
 
 def is_safe_url(target):
     '''
@@ -50,10 +53,13 @@ def post_page(page):
 @app.route("/assets/<path:filename>")
 def assets(filename):
     '''
-    A custom static file router. We need to find the correct location depending
-    on the THEME config variable.
+    A custom static file router. This function will search the assets folder in
+    themes and core.
     '''
-    return send_from_directory(os.path.join(os.path.dirname(__file__), "../themes/%s/assets" % (app.config["THEME"],)), filename)
+    try:
+        return send_from_directory(os.path.join(os.path.dirname(__file__), "../themes/%s/assets" % (app.config["THEME"],)), filename)
+    except NotFound as e:
+        return send_from_directory(os.path.join(os.path.dirname(__file__), "../core/assets"), filename)
 
 @app.route("/admin/login/", methods=["GET", "POST"])
 def login():
